@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@function get-vw($target) {   $vw-context: (1440 * 0.01) * 1px;   
+@return ($target / $vw-context) * 1vw; }
+
 body {
     font-family: 'Raleway', sans-serif;
+    background-color:brown;
 }
 
 .site-header {
@@ -10,7 +14,7 @@ body {
     margin: 0 auto;
 }
 .logo-text {
-    font-size:24px;
+    font-size:get-vw(24px);
     font-weight:700;
     line-height: 30px;
     text-transform: uppercase;
@@ -48,8 +52,7 @@ body {
 .cover-image-wrap {
     height: 600px;
 }
-.cover-image {
-}
+
 img {
     /* width: 100% */
     /* height: 600px;
